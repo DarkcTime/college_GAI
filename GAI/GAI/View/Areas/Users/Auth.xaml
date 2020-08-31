@@ -1,0 +1,44 @@
+﻿<Window x:Class="GAI.View.Areas.Users.Auth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GAI.View.Areas.Users"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <GroupBox Style="{StaticResource StyleGroupBoxText}" Header="Почта">
+                <TextBox Text="{Binding Path=User.Email}"></TextBox>
+            </GroupBox>
+            <GroupBox  Grid.Row="1" Style="{StaticResource StyleGroupBoxText}" Header="Пароль">
+                <TextBox Text="{Binding Path=User.Password}"></TextBox>
+            </GroupBox>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/GAI;component/Resource/Images/icon.png" Margin="10"></Image>
+            <Label Grid.Column="1">ГИБДД</Label>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Command="{Binding Path=CancelCommand}">Отмена</Button>
+            <Button Grid.Column="1" Command="{Binding Path=SingInCommand}">Войти</Button>
+        </Grid>
+    </Grid>
+</Window>

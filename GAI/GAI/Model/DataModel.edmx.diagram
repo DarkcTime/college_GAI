@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="57678ca537984421a3a270cc80a864a1" Name="Diagram1">
+        <EntityTypeShape EntityType="GAIModel.Color" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.Driver" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.DriverLisence" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.DriverTransportVehicle" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.Engine" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.Gender" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.Insurance" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.LicenceStatu" Width="1.5" PointX="1.5" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.Office" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.Officer" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.Protocol" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.Region" Width="1.5" PointX="0.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.TransportVehicle" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.TypeOfOwnerShip" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.TypeOfTransportVehicle" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GAIModel.User" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="GAIModel.FK_TransportVehicle_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_Driver_DriverLisence" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_Driver_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_Driver_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_DriverTransportVehicle_Driver" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_DriverLisence_LicenceStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_DriverTransportVehicle_TransportVehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_DriverTransportVehicle_TypeOfOwnerShip" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_Protocol_DriverTransportVehicle" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_TransportVehicle_Engine" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_TransportVehicle_Insurance" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_Office_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_Officer_Office" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_Officer_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_Protocol_Officer" ManuallyRouted="false" />
+        <AssociationConnector Association="GAIModel.FK_TransportVehicle_TypeOfTransportVehicle" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

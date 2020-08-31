@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GAIModelStoreContainer" CdmEntityContainer="GAIEntities">
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="GAIModel.Color">
+        <MappingFragment StoreEntitySet="Color">
+          <ScalarProperty Name="IdColor" ColumnName="IdColor" />
+          <ScalarProperty Name="NameColor" ColumnName="NameColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="GAIModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="IdDriver" ColumnName="IdDriver" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DrivingLisenceId" ColumnName="DrivingLisenceId" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverLisences">
+      <EntityTypeMapping TypeName="GAIModel.DriverLisence">
+        <MappingFragment StoreEntitySet="DriverLisence">
+          <ScalarProperty Name="IdDrivingLisence" ColumnName="IdDrivingLisence" />
+          <ScalarProperty Name="DateOfReceipt" ColumnName="DateOfReceipt" />
+          <ScalarProperty Name="DateExpiry" ColumnName="DateExpiry" />
+          <ScalarProperty Name="LisenceStatusId" ColumnName="LisenceStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverTransportVehicles">
+      <EntityTypeMapping TypeName="GAIModel.DriverTransportVehicle">
+        <MappingFragment StoreEntitySet="DriverTransportVehicle">
+          <ScalarProperty Name="IdDriverTransportVehicle" ColumnName="IdDriverTransportVehicle" />
+          <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+          <ScalarProperty Name="TransportVehicleId" ColumnName="TransportVehicleId" />
+          <ScalarProperty Name="TypeOfOwnerShipId" ColumnName="TypeOfOwnerShipId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Engines">
+      <EntityTypeMapping TypeName="GAIModel.Engine">
+        <MappingFragment StoreEntitySet="Engine">
+          <ScalarProperty Name="IdEngine" ColumnName="IdEngine" />
+          <ScalarProperty Name="Power" ColumnName="Power" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="YearOfManufacture" ColumnName="YearOfManufacture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="GAIModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="IdGender" ColumnName="IdGender" />
+          <ScalarProperty Name="NameGender" ColumnName="NameGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Insurances">
+      <EntityTypeMapping TypeName="GAIModel.Insurance">
+        <MappingFragment StoreEntitySet="Insurance">
+          <ScalarProperty Name="IdInsurance" ColumnName="IdInsurance" />
+          <ScalarProperty Name="DateOfReceipt" ColumnName="DateOfReceipt" />
+          <ScalarProperty Name="DateExpiry" ColumnName="DateExpiry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicenceStatus">
+      <EntityTypeMapping TypeName="GAIModel.LicenceStatu">
+        <MappingFragment StoreEntitySet="LicenceStatus">
+          <ScalarProperty Name="IdLisenceStatus" ColumnName="IdLisenceStatus" />
+          <ScalarProperty Name="NameLisenceStatus" ColumnName="NameLisenceStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Offices">
+      <EntityTypeMapping TypeName="GAIModel.Office">
+        <MappingFragment StoreEntitySet="Office">
+          <ScalarProperty Name="IdOffice" ColumnName="IdOffice" />
+          <ScalarProperty Name="NameOffice" ColumnName="NameOffice" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Officers">
+      <EntityTypeMapping TypeName="GAIModel.Officer">
+        <MappingFragment StoreEntitySet="Officer">
+          <ScalarProperty Name="IdOfficer" ColumnName="IdOfficer" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Protocols">
+      <EntityTypeMapping TypeName="GAIModel.Protocol">
+        <MappingFragment StoreEntitySet="Protocol">
+          <ScalarProperty Name="IdProtocol" ColumnName="IdProtocol" />
+          <ScalarProperty Name="DateOfViolationId" ColumnName="DateOfViolationId" />
+          <ScalarProperty Name="PlaceOfViolationId" ColumnName="PlaceOfViolationId" />
+          <ScalarProperty Name="TypeOfViolationId" ColumnName="TypeOfViolationId" />
+          <ScalarProperty Name="DriverTransportVihicleId" ColumnName="DriverTransportVihicleId" />
+          <ScalarProperty Name="OfficerId" ColumnName="OfficerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="GAIModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="IdRegion" ColumnName="IdRegion" />
+          <ScalarProperty Name="NameRegion" ColumnName="NameRegion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="GAIModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransportVehicles">
+      <EntityTypeMapping TypeName="GAIModel.TransportVehicle">
+        <MappingFragment StoreEntitySet="TransportVehicle">
+          <ScalarProperty Name="IdTransportVehicle" ColumnName="IdTransportVehicle" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="EngineId" ColumnName="EngineId" />
+          <ScalarProperty Name="ColorId" ColumnName="ColorId" />
+          <ScalarProperty Name="TypeOfTransportVehicle" ColumnName="TypeOfTransportVehicle" />
+          <ScalarProperty Name="InsuranceId" ColumnName="InsuranceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeOfOwnerShips">
+      <EntityTypeMapping TypeName="GAIModel.TypeOfOwnerShip">
+        <MappingFragment StoreEntitySet="TypeOfOwnerShip">
+          <ScalarProperty Name="IdTypeOfOwnerShip" ColumnName="IdTypeOfOwnerShip" />
+          <ScalarProperty Name="NameType" ColumnName="NameType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeOfTransportVehicles">
+      <EntityTypeMapping TypeName="GAIModel.TypeOfTransportVehicle">
+        <MappingFragment StoreEntitySet="TypeOfTransportVehicle">
+          <ScalarProperty Name="IdTypeOfTransportVehicle" ColumnName="IdTypeOfTransportVehicle" />
+          <ScalarProperty Name="NameTypeOfTransportVehicle" ColumnName="NameTypeOfTransportVehicle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="GAIModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GAIModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GAIModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GAIModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GAIModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GAIModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GAIModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GAIModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GAIModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GAIModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

@@ -8,5 +8,7 @@ namespace GAI.Model.Areas
 {
     class SharedModel
     {
+        protected static Model.GAIEntities context = new Model.GAIEntities();
+
     }
 }

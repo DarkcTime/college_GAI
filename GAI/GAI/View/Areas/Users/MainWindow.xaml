@@ -21,7 +21,7 @@
             <Label Grid.Column="1" Foreground="White" Content="{Binding Path=NameOfficer}"></Label>
             <Image Grid.Column="2" Margin="9" Source="/GAI;component/Resource/Icons/menu-vertical.png"></Image>
         </Grid>
-        <Frame Grid.Row="1" Content="{Binding Path=CurrentPage}">
+        <Frame NavigationUIVisibility="Hidden" Grid.Row="1" Content="{Binding Path=CurrentPage}">
             
         </Frame>
     </Grid>

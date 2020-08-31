@@ -64,13 +64,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\TypeOfViolation.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AreasViewModel\ProtocolViewModel\AddProtocolViewModel.cs" />
+    <Compile Include="ViewModel\AreasViewModel\ProtocolViewModel\ListProtocolsViewModel.cs" />
+    <Compile Include="ViewModel\AreasViewModel\UsersViewModel\MainMenuViewModel.cs" />
     <Compile Include="ViewModel\AreasViewModel\UsersViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\Areas\Protocol\AddProtocol.xaml.cs">
+      <DependentUpon>AddProtocol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Areas\Protocol\ListProtocols.xaml.cs">
+      <DependentUpon>ListProtocols.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Areas\Users\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Areas\Users\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Areas\Protocol\AddProtocol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Areas\Protocol\ListProtocols.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Areas\Users\Auth.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -208,10 +228,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\AreasViewModel\DriverViewModel\" />
-    <Folder Include="ViewModel\AreasViewModel\ProtocolViewModel\" />
     <Folder Include="ViewModel\AreasViewModel\TransportVehicleViewModel\" />
     <Folder Include="View\Areas\Driver\" />
-    <Folder Include="View\Areas\Protocol\" />
     <Folder Include="View\Areas\TransportVehicle\" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +246,7 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resource\Icons\back.png" />
     <Resource Include="Resource\Icons\search.png" />
     <Resource Include="Resource\Images\driver.png" />
     <Resource Include="Resource\Images\protocol.jpg" />

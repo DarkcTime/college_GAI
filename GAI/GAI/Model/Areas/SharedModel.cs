@@ -10,5 +10,10 @@ namespace GAI.Model.Areas
     {
         protected static Model.GAIEntities context = new Model.GAIEntities();
 
+
+        public static void SaveChanges()
+        {
+            context.SaveChanges();    
+        }
     }
 }

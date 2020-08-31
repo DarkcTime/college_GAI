@@ -13,17 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GAI.View.Areas.Users
+namespace GAI.View.Areas.Protocol
 {
     /// <summary>
-    /// Interaction logic for MainMenu.xaml
+    /// Interaction logic for ListProtocols.xaml
     /// </summary>
-    public partial class MainMenu : Page
+    public partial class ListProtocols : Page
     {
-        public MainMenu()
+        public ListProtocols()
         {
             InitializeComponent();
-            this.DataContext = new ViewModel.AreasViewModel.UsersViewModel.MainMenuViewModel();
+            this.DataContext = new ViewModel.AreasViewModel.ProtocolViewModel.ListProtocolsViewModel();
         }
     }
 }

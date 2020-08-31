@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GAIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GAIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Color">
           <Key>
             <PropertyRef Name="IdColor" />
@@ -97,7 +97,7 @@
           <Key>
             <PropertyRef Name="IdProtocol" />
           </Key>
-          <Property Name="IdProtocol" Type="int" Nullable="false" />
+          <Property Name="IdProtocol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DateOfViolationId" Type="date" Nullable="false" />
           <Property Name="PlaceOfViolationId" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TypeOfViolationId" Type="int" Nullable="false" />
@@ -145,6 +145,14 @@
           </Key>
           <Property Name="IdTypeOfTransportVehicle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameTypeOfTransportVehicle" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeOfViolation">
+          <Key>
+            <PropertyRef Name="IdTypeOfViolation" />
+          </Key>
+          <Property Name="IdTypeOfViolation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fine" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -298,6 +306,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Protocol_TypeOfViolation">
+          <End Role="TypeOfViolation" Type="Self.TypeOfViolation" Multiplicity="1" />
+          <End Role="Protocol" Type="Self.Protocol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfViolation">
+              <PropertyRef Name="IdTypeOfViolation" />
+            </Principal>
+            <Dependent Role="Protocol">
+              <PropertyRef Name="TypeOfViolationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TransportVehicle_Color">
           <End Role="Color" Type="Self.Color" Multiplicity="1" />
           <End Role="TransportVehicle" Type="Self.TransportVehicle" Multiplicity="*" />
@@ -394,6 +414,7 @@
           <EntitySet Name="TransportVehicle" EntityType="Self.TransportVehicle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeOfOwnerShip" EntityType="Self.TypeOfOwnerShip" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeOfTransportVehicle" EntityType="Self.TypeOfTransportVehicle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeOfViolation" EntityType="Self.TypeOfViolation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Driver_DriverLisence" Association="Self.FK_Driver_DriverLisence">
             <End Role="DriverLisence" EntitySet="DriverLisence" />
@@ -443,6 +464,10 @@
             <End Role="Officer" EntitySet="Officer" />
             <End Role="Protocol" EntitySet="Protocol" />
           </AssociationSet>
+          <AssociationSet Name="FK_Protocol_TypeOfViolation" Association="Self.FK_Protocol_TypeOfViolation">
+            <End Role="TypeOfViolation" EntitySet="TypeOfViolation" />
+            <End Role="Protocol" EntitySet="Protocol" />
+          </AssociationSet>
           <AssociationSet Name="FK_TransportVehicle_Color" Association="Self.FK_TransportVehicle_Color">
             <End Role="Color" EntitySet="Color" />
             <End Role="TransportVehicle" EntitySet="TransportVehicle" />
@@ -460,8 +485,7 @@
             <End Role="TransportVehicle" EntitySet="TransportVehicle" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GAIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -585,6 +609,7 @@
           <Property Name="OfficerId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DriverTransportVehicle" Relationship="Self.FK_Protocol_DriverTransportVehicle" FromRole="Protocol" ToRole="DriverTransportVehicle" />
           <NavigationProperty Name="Officer" Relationship="Self.FK_Protocol_Officer" FromRole="Protocol" ToRole="Officer" />
+          <NavigationProperty Name="TypeOfViolation" Relationship="GAIModel.FK_Protocol_TypeOfViolation" FromRole="Protocol" ToRole="TypeOfViolation" />
         </EntityType>
         <EntityType Name="Region">
           <Key>
@@ -950,6 +975,11 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="TypeOfViolations" EntityType="GAIModel.TypeOfViolation" />
+          <AssociationSet Name="FK_Protocol_TypeOfViolation" Association="GAIModel.FK_Protocol_TypeOfViolation">
+            <End Role="TypeOfViolation" EntitySet="TypeOfViolations" />
+            <End Role="Protocol" EntitySet="Protocols" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -962,6 +992,27 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="TypeOfViolation">
+          <Key>
+            <PropertyRef Name="IdTypeOfViolation" />
+          </Key>
+          <Property Name="IdTypeOfViolation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Protocols" Relationship="GAIModel.FK_Protocol_TypeOfViolation" FromRole="TypeOfViolation" ToRole="Protocol" />
+        </EntityType>
+        <Association Name="FK_Protocol_TypeOfViolation">
+          <End Type="GAIModel.TypeOfViolation" Role="TypeOfViolation" Multiplicity="1" />
+          <End Type="GAIModel.Protocol" Role="Protocol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfViolation">
+              <PropertyRef Name="IdTypeOfViolation" />
+            </Principal>
+            <Dependent Role="Protocol">
+              <PropertyRef Name="TypeOfViolationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1158,6 +1209,15 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GAIModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GAIModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="TypeOfViolations">
+            <EntityTypeMapping TypeName="GAIModel.TypeOfViolation">
+              <MappingFragment StoreEntitySet="TypeOfViolation">
+                <ScalarProperty Name="Fine" ColumnName="Fine" />
+                <ScalarProperty Name="NameType" ColumnName="NameType" />
+                <ScalarProperty Name="IdTypeOfViolation" ColumnName="IdTypeOfViolation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

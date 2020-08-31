@@ -23,5 +23,6 @@ namespace GAI.Model
     
         public virtual DriverTransportVehicle DriverTransportVehicle { get; set; }
         public virtual Officer Officer { get; set; }
+        public virtual TypeOfViolation TypeOfViolation { get; set; }
     }
 }

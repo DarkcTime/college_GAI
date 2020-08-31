@@ -24,3 +24,7 @@ D:\college\practice_for_summer\gai\GAI\GAI\bin\Debug\EntityFramework.SqlServer.x
 D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\GAI.csproj.CopyComplete
 D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Users\MainMenu.g.cs
 D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Users\MainMenu.baml
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Protocol\ListProtocols.g.cs
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Protocol\ListProtocols.baml
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Protocol\AddProtocol.g.cs
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Protocol\AddProtocol.baml

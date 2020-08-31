@@ -92,7 +92,7 @@
     <Key>
       <PropertyRef Name="IdProtocol" />
     </Key>
-    <Property Name="IdProtocol" Type="int" Nullable="false" />
+    <Property Name="IdProtocol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DateOfViolationId" Type="date" Nullable="false" />
     <Property Name="PlaceOfViolationId" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TypeOfViolationId" Type="int" Nullable="false" />
@@ -140,6 +140,14 @@
     </Key>
     <Property Name="IdTypeOfTransportVehicle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NameTypeOfTransportVehicle" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeOfViolation">
+    <Key>
+      <PropertyRef Name="IdTypeOfViolation" />
+    </Key>
+    <Property Name="IdTypeOfViolation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fine" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -293,6 +301,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Protocol_TypeOfViolation">
+    <End Role="TypeOfViolation" Type="Self.TypeOfViolation" Multiplicity="1" />
+    <End Role="Protocol" Type="Self.Protocol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeOfViolation">
+        <PropertyRef Name="IdTypeOfViolation" />
+      </Principal>
+      <Dependent Role="Protocol">
+        <PropertyRef Name="TypeOfViolationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TransportVehicle_Color">
     <End Role="Color" Type="Self.Color" Multiplicity="1" />
     <End Role="TransportVehicle" Type="Self.TransportVehicle" Multiplicity="*" />
@@ -389,6 +409,7 @@
     <EntitySet Name="TransportVehicle" EntityType="Self.TransportVehicle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeOfOwnerShip" EntityType="Self.TypeOfOwnerShip" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeOfTransportVehicle" EntityType="Self.TypeOfTransportVehicle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeOfViolation" EntityType="Self.TypeOfViolation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Driver_DriverLisence" Association="Self.FK_Driver_DriverLisence">
       <End Role="DriverLisence" EntitySet="DriverLisence" />
@@ -436,6 +457,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Protocol_Officer" Association="Self.FK_Protocol_Officer">
       <End Role="Officer" EntitySet="Officer" />
+      <End Role="Protocol" EntitySet="Protocol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Protocol_TypeOfViolation" Association="Self.FK_Protocol_TypeOfViolation">
+      <End Role="TypeOfViolation" EntitySet="TypeOfViolation" />
       <End Role="Protocol" EntitySet="Protocol" />
     </AssociationSet>
     <AssociationSet Name="FK_TransportVehicle_Color" Association="Self.FK_TransportVehicle_Color">

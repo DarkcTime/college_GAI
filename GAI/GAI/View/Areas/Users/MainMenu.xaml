@@ -19,11 +19,12 @@
             </Grid.ColumnDefinitions>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
                 <TextBlock FontWeight="Bold" TextAlignment="Center">Протокол</TextBlock>
-                <Button Width="100" Height="100">
+                <Button Width="100" Height="100" Command="{Binding Path=ProtocolCommand}">
                     <Button.Content>
                         <Image Source="/GAI;component/Resource/Images/protocol.jpg"></Image>
                     </Button.Content>
                 </Button>
+                <Button Command="{Binding Path=AddCommand}" Style="{StaticResource StyleButton}" Margin="10">Добавить </Button>
             </StackPanel>
             <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
                 <TextBlock FontWeight="Bold" TextAlignment="Center">Водитель</TextBlock>

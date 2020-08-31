@@ -8,7 +8,7 @@
         Title="Главное меню" Height="550" Width="800">
     <Grid>
         <Grid.RowDefinitions >
-            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.11*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Background="#FF219BDA">
@@ -18,7 +18,11 @@
                 <ColumnDefinition Width="0.2*"/>
             </Grid.ColumnDefinitions>
             <Image Source="/GAI;component/Resource/Images/icon.png"></Image>
-            <Label Grid.Column="1" Foreground="White" Content="{Binding Path=Officer.FirstName}"></Label>
+            <Label Grid.Column="1" Foreground="White" Content="{Binding Path=NameOfficer}"></Label>
+            <Image Grid.Column="2" Margin="9" Source="/GAI;component/Resource/Icons/menu-vertical.png"></Image>
         </Grid>
+        <Frame Grid.Row="1" Content="{Binding Path=CurrentPage}">
+            
+        </Frame>
     </Grid>
 </Window>

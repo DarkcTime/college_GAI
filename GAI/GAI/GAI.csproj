@@ -65,6 +65,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\AreasViewModel\UsersViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\Areas\Users\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Areas\Users\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
     <Compile Include="View\Areas\Users\Auth.xaml.cs">
       <DependentUpon>Auth.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Areas\Users\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Areas\Users\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,7 +207,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resource\Icons\" />
     <Folder Include="ViewModel\AreasViewModel\DriverViewModel\" />
     <Folder Include="ViewModel\AreasViewModel\ProtocolViewModel\" />
     <Folder Include="ViewModel\AreasViewModel\TransportVehicleViewModel\" />
@@ -222,6 +228,10 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resource\Icons\search.png" />
+    <Resource Include="Resource\Images\driver.png" />
+    <Resource Include="Resource\Images\protocol.jpg" />
+    <Resource Include="Resource\Icons\menu-vertical.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -22,3 +22,5 @@ D:\college\practice_for_summer\gai\GAI\GAI\bin\Debug\EntityFramework.SqlServer.d
 D:\college\practice_for_summer\gai\GAI\GAI\bin\Debug\EntityFramework.xml
 D:\college\practice_for_summer\gai\GAI\GAI\bin\Debug\EntityFramework.SqlServer.xml
 D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\GAI.csproj.CopyComplete
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Users\MainMenu.g.cs
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Users\MainMenu.baml

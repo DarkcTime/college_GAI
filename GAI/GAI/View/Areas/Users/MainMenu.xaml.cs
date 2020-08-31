@@ -10,20 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GAI.View.Areas.Users
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainMenu : Page
     {
-        public MainWindow()
+        public MainMenu()
         {
             InitializeComponent();
-            ViewModel.AreasViewModel.UsersViewModel.MainWindowViewModel.CloseWindow = new Action(() => this.Close());
-            this.DataContext = new ViewModel.AreasViewModel.UsersViewModel.MainWindowViewModel();
         }
     }
 }

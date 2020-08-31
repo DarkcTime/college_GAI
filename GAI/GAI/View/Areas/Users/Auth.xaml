@@ -37,8 +37,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Command="{Binding Path=CancelCommand}">Отмена</Button>
-            <Button Grid.Column="1" Command="{Binding Path=SingInCommand}">Войти</Button>
+            <Button Style="{StaticResource StyleButton}"  Grid.Column="1" Command="{Binding Path=SingInCommand}">Войти</Button>
+            <Button Style="{StaticResource StyleButton}" Command="{Binding Path=CancelCommand}">Отмена</Button>
+            
         </Grid>
     </Grid>
 </Window>

@@ -10,6 +10,8 @@ namespace GAI.Model.Areas
     {
         public static Model.User AuthorizedUser { get; private set; }
 
+        public static Model.Officer Officer { get; private set; }
+
         public bool AuthUser(Model.User _user)
         {
             var user = context.Users.Where(i => _user.Email == i.Email && _user.Password == i.Password);
@@ -17,6 +19,7 @@ namespace GAI.Model.Areas
             if (user.Count() > 0)
             {
                 AuthorizedUser = user.FirstOrDefault();
+                Officer = context.Officers.Where(i => AuthorizedUser.IdUser == i.IdOfficer).FirstOrDefault(); 
                 return true;
             }
 

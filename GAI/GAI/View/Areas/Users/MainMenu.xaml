@@ -1,0 +1,57 @@
+﻿<Page x:Class="GAI.View.Areas.Users.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GAI.View.Areas.Users"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Главное меню">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+                <TextBlock FontWeight="Bold" TextAlignment="Center">Протокол</TextBlock>
+                <Button Width="100" Height="100">
+                    <Button.Content>
+                        <Image Source="/GAI;component/Resource/Images/protocol.jpg"></Image>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+                <TextBlock FontWeight="Bold" TextAlignment="Center">Водитель</TextBlock>
+                <Button Width="100" Height="100">
+                    <Button.Content>
+                        <Image Source="/GAI;component/Resource/Images/driver.png"></Image>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <GroupBox  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="2" Header="Автомобили">
+                <StackPanel Orientation="Vertical" Margin="50" >
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Margin="0 0 10 0" VerticalAlignment="Center">VIN</TextBlock>
+                        <TextBox Width="160" Margin="10 0 10 0"></TextBox>
+                        <Button>
+                            <Button.Content>
+                                <Image Source="/GAI;component/Resource/Icons/search.png" Width="25" ></Image>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel >
+                        <Button Height="25" Margin="0 10 0 10" >Добавить новый автомобиль</Button>
+                        <Button Height="25">Список автомобилей</Button>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Page>

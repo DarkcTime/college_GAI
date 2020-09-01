@@ -77,7 +77,7 @@ namespace GAI.ViewModel.AreasViewModel.DriverViewModel
         {
             try
             {
-                
+                MessageBoxInformation("Данные о записи успешно отредактированы");
             }
             catch (Exception ex)
             {
@@ -90,7 +90,7 @@ namespace GAI.ViewModel.AreasViewModel.DriverViewModel
         {
             try
             {
-                
+                MessageBoxInformation("Запись успешно удалена из таблицы");
             }
             catch (Exception ex)
             {

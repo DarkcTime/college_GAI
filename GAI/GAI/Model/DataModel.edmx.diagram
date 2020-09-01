@@ -40,6 +40,8 @@
         <AssociationConnector Association="GAIModel.FK_TransportVehicle_TypeOfTransportVehicle" ManuallyRouted="false" />
         <EntityTypeShape EntityType="GAIModel.TypeOfViolation" Width="1.5" PointX="7.375" PointY="7.875" />
         <AssociationConnector Association="GAIModel.FK_Protocol_TypeOfViolation" />
+        <EntityTypeShape EntityType="GAIModel.Position" Width="1.5" PointX="9.375" PointY="7.875" />
+        <AssociationConnector Association="GAIModel.FK_Officer_Position" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

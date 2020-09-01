@@ -64,18 +64,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Position.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\TypeOfViolation.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AreasViewModel\DriverViewModel\AddDriverViewModel.cs" />
+    <Compile Include="ViewModel\AreasViewModel\DriverViewModel\ListDriverViewModel.cs" />
     <Compile Include="ViewModel\AreasViewModel\ProtocolViewModel\AddProtocolViewModel.cs" />
     <Compile Include="ViewModel\AreasViewModel\ProtocolViewModel\ListProtocolsViewModel.cs" />
+    <Compile Include="ViewModel\AreasViewModel\UsersViewModel\AccountSettingsViewModel.cs" />
     <Compile Include="ViewModel\AreasViewModel\UsersViewModel\MainMenuViewModel.cs" />
     <Compile Include="ViewModel\AreasViewModel\UsersViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\Areas\Driver\AddDriver.xaml.cs">
+      <DependentUpon>AddDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Areas\Driver\ListDrivers.xaml.cs">
+      <DependentUpon>ListDrivers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Areas\Protocol\AddProtocol.xaml.cs">
       <DependentUpon>AddProtocol.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Areas\Protocol\ListProtocols.xaml.cs">
       <DependentUpon>ListProtocols.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Areas\Users\AccountSettings.xaml.cs">
+      <DependentUpon>AccountSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Areas\Users\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
@@ -83,11 +98,23 @@
     <Compile Include="View\Areas\Users\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Areas\Driver\AddDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Areas\Driver\ListDrivers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Areas\Protocol\AddProtocol.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Areas\Protocol\ListProtocols.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Areas\Users\AccountSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -227,9 +254,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModel\AreasViewModel\DriverViewModel\" />
     <Folder Include="ViewModel\AreasViewModel\TransportVehicleViewModel\" />
-    <Folder Include="View\Areas\Driver\" />
     <Folder Include="View\Areas\TransportVehicle\" />
   </ItemGroup>
   <ItemGroup>

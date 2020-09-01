@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\college\practice_for_summer\gai\GAI\GAI\App.xaml
-52012227832
+8592910604
 2948482949
-461299051479
+53-707741839
 18-1484468535
-View\Areas\Protocol\AddProtocol.xaml;View\Areas\Protocol\ListProtocols.xaml;View\Areas\Users\Auth.xaml;View\Areas\Users\MainMenu.xaml;View\Areas\Users\MainWindow.xaml;
+View\Areas\Driver\AddDriver.xaml;View\Areas\Driver\ListDrivers.xaml;View\Areas\Protocol\AddProtocol.xaml;View\Areas\Protocol\ListProtocols.xaml;View\Areas\Users\AccountSettings.xaml;View\Areas\Users\Auth.xaml;View\Areas\Users\MainMenu.xaml;View\Areas\Users\MainWindow.xaml;
 
-True
+False
 

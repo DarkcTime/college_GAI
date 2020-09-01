@@ -88,6 +88,13 @@
     <Property Name="OfficeId" Type="int" Nullable="false" />
     <Property Name="PositionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="IdPosition" />
+    </Key>
+    <Property Name="IdPosition" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamePosition" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="Protocol">
     <Key>
       <PropertyRef Name="IdProtocol" />
@@ -265,6 +272,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Officer_Position">
+    <End Role="Position" Type="Self.Position" Multiplicity="1" />
+    <End Role="Officer" Type="Self.Officer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="IdPosition" />
+      </Principal>
+      <Dependent Role="Officer">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Officer_Users">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Officer" Type="Self.Officer" Multiplicity="0..1" />
@@ -403,6 +422,7 @@
     <EntitySet Name="LicenceStatus" EntityType="Self.LicenceStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Office" EntityType="Self.Office" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Officer" EntityType="Self.Officer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Protocol" EntityType="Self.Protocol" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -445,6 +465,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Officer_Office" Association="Self.FK_Officer_Office">
       <End Role="Office" EntitySet="Office" />
+      <End Role="Officer" EntitySet="Officer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Officer_Position" Association="Self.FK_Officer_Position">
+      <End Role="Position" EntitySet="Position" />
       <End Role="Officer" EntitySet="Officer" />
     </AssociationSet>
     <AssociationSet Name="FK_Officer_Users" Association="Self.FK_Officer_Users">

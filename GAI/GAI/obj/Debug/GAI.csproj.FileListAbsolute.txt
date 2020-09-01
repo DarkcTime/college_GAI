@@ -28,3 +28,9 @@ D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Protocol\ListPro
 D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Protocol\ListProtocols.baml
 D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Protocol\AddProtocol.g.cs
 D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Protocol\AddProtocol.baml
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Users\AccountSettings.g.cs
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Users\AccountSettings.baml
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Driver\AddDriver.g.cs
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Driver\ListDrivers.g.cs
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Driver\AddDriver.baml
+D:\college\practice_for_summer\gai\GAI\GAI\obj\Debug\View\Areas\Driver\ListDrivers.baml

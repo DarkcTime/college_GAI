@@ -1,12 +1,14 @@
 ﻿using GAI.BackEnd;
 using GAI.Model.Areas;
 using GAI.View.Areas.Users;
+using GAI.ViewModel.HelperClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace GAI.ViewModel.AreasViewModel.UsersViewModel
 {
@@ -21,6 +23,10 @@ namespace GAI.ViewModel.AreasViewModel.UsersViewModel
         private Page _currentPage;
 
         private string _nameOfficer;
+
+        public ICommand SettingsAccountCommand { get; set; }
+
+        public ICommand ExitCommand { get; set; }
 
         public string Title
         {
@@ -51,8 +57,38 @@ namespace GAI.ViewModel.AreasViewModel.UsersViewModel
 
                 SetPage(new MainMenu());
 
-                NameOfficer = $"{UsersClass.Officer.FirstName} {UsersClass.Officer.LastName}";  
+                NameOfficer = $"{UsersClass.Officer.FirstName} {UsersClass.Officer.LastName}";
 
+                this.SettingsAccountCommand = new Command(SettingsAccountCommandClick);
+
+                this.ExitCommand = new Command(ExitCommandClick);
+
+            }
+            catch(Exception ex)
+            {
+                MessageBoxError(ex);
+            }
+        }
+
+        
+
+        private void SettingsAccountCommandClick(object obj)
+        {
+            try
+            {
+                SetPage(new View.Areas.Users.AccountSettings());
+            }
+            catch(Exception ex)
+            {
+                MessageBoxError(ex);
+            }
+        }
+
+        private void ExitCommandClick(object obj)
+        {
+            try
+            {
+                OpenNewWindowAndCloseThis(CloseWindow, new View.Areas.Users.Auth()) ;
             }
             catch(Exception ex)
             {

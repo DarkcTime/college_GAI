@@ -24,7 +24,7 @@
             </Grid.ColumnDefinitions>
             <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <GroupBox Header="Дата" Style="{StaticResource StyleGroupBoxText}">
-                    <DatePicker Text="{Binding Path=SelectedProtocol.DateOfViolationId}"></DatePicker>
+                    <DatePicker Text="{Binding Path=SelectedProtocol.DateOfViolationId, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
                 </GroupBox>
                 <GroupBox Header="Место" Style="{StaticResource StyleGroupBoxTextLong}">
                     <TextBox Text="{Binding Path=SelectedProtocol.PlaceOfViolationId}"></TextBox>
@@ -32,7 +32,8 @@
                 <GroupBox Header="Тип нарушения" Style="{StaticResource StyleGroupBoxText}">
                     <ComboBox ItemsSource="{Binding Path=ListViolations}" 
                               DisplayMemberPath="NameType"
-                              SelectedItem="{Binding Path=SelectedProtocol.TypeOfViolation}"></ComboBox>
+                              SelectedItem="{Binding Path=SelectedProtocol.TypeOfViolation}"
+                              ></ComboBox>
                 </GroupBox>
                 <GroupBox Header="Штраф" Style="{StaticResource StyleGroupBoxText}">
                     <TextBox IsEnabled="False" Text="{Binding Path=SelectedProtocol.TypeOfViolation.Fine}"></TextBox>
@@ -41,14 +42,16 @@
                     <ComboBox
                               ItemsSource="{Binding Path=ListTransportVehicle}" 
                               DisplayMemberPath="VIN"
-                              SelectedItem="{Binding Path=SelectedProtocol.DriverTransportVehicle.TransportVehicle}"
+                              SelectedItem="{Binding 
+                        Path=SelectedProtocol.DriverTransportVehicle.TransportVehicle
+                        }"
                         ></ComboBox>
                 </GroupBox>
                 <GroupBox Header="Водитель" Style="{StaticResource StyleGroupBoxText}">
                     <ComboBox
                         ItemsSource="{Binding Path=ListOfDrivers}"
                         DisplayMemberPath="FirstName"
-                        SelectedItem="{Binding Path=SelectedProtocol.DriverTransportVehicle.Driver}"></ComboBox>
+                        SelectedItem="{Binding Path=SelectedProtocol.DriverTransportVehicle.Driver, UpdateSourceTrigger=PropertyChanged}"></ComboBox>
                 </GroupBox>
             
             </WrapPanel>

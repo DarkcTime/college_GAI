@@ -48,6 +48,9 @@ namespace GAI.ViewModel.AreasViewModel.ProtocolViewModel
                 LoadDataInComboBox();
 
                 this.SelectedProtocol = new Model.Protocol();
+                SelectedProtocol.DateOfViolationId = DateTime.Now;
+                SelectedProtocol.DriverTransportVehicle.TransportVehicle = new Model.TransportVehicle();
+
             }
             catch(Exception ex)
             {
@@ -64,10 +67,12 @@ namespace GAI.ViewModel.AreasViewModel.ProtocolViewModel
 
         private void AddNewProtocolCommandClick(object obj)
         {
+            MessageBoxInformation(SelectedProtocol.PlaceOfViolationId.ToString());
+            MessageBoxInformation(SelectedProtocol.DriverTransportVehicle.TransportVehicle.ToString());
+            //Model.Areas.ProtocolClass.AddNewProtocol(SelectedProtocol);
+            SharedModel.SaveChanges();
             try
             {
-                ProtocolClass.AddNewProtocol(SelectedProtocol);
-                SharedModel.SaveChanges();
             }
             catch (Exception ex)
             {

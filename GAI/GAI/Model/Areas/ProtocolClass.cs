@@ -36,11 +36,11 @@ namespace GAI.Model.Areas
             
         }
 
-        public void AddNewProtocol(Model.Protocol protocol)
+        public static void AddNewProtocol(Model.Protocol protocol)
         {
             protocol.TypeOfViolationId = protocol.TypeOfViolation.IdTypeOfViolation;
-            protocol.DriverTransportVihicleId = protocol.DriverTransportVehicle.IdDriverTransportVehicle;
-            protocol.TypeOfViolationId = protocol.TypeOfViolation.IdTypeOfViolation;
+            
+            //protocol.DriverTransportVihicleId = driverTransportVehicle.IdDriverTransportVehicle;
             context.Protocols.Add(protocol);
             
         }

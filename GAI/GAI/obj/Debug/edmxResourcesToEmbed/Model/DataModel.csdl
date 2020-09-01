@@ -107,6 +107,7 @@
     <NavigationProperty Name="Office" Relationship="Self.FK_Officer_Office" FromRole="Officer" ToRole="Office" />
     <NavigationProperty Name="User" Relationship="Self.FK_Officer_Users" FromRole="Officer" ToRole="Users" />
     <NavigationProperty Name="Protocols" Relationship="Self.FK_Protocol_Officer" FromRole="Officer" ToRole="Protocol" />
+    <NavigationProperty Name="Position" Relationship="GAIModel.FK_Officer_Position" FromRole="Officer" ToRole="Position" />
   </EntityType>
   <EntityType Name="Protocol">
     <Key>
@@ -491,6 +492,11 @@
       <End Role="TypeOfViolation" EntitySet="TypeOfViolations" />
       <End Role="Protocol" EntitySet="Protocols" />
     </AssociationSet>
+    <EntitySet Name="Positions" EntityType="GAIModel.Position" />
+    <AssociationSet Name="FK_Officer_Position" Association="GAIModel.FK_Officer_Position">
+      <End Role="Position" EntitySet="Positions" />
+      <End Role="Officer" EntitySet="Officers" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -521,6 +527,26 @@
       </Principal>
       <Dependent Role="Protocol">
         <PropertyRef Name="TypeOfViolationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="IdPosition" />
+    </Key>
+    <Property Name="IdPosition" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NamePosition" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Officers" Relationship="GAIModel.FK_Officer_Position" FromRole="Position" ToRole="Officer" />
+  </EntityType>
+  <Association Name="FK_Officer_Position">
+    <End Type="GAIModel.Position" Role="Position" Multiplicity="1" />
+    <End Type="GAIModel.Officer" Role="Officer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="IdPosition" />
+      </Principal>
+      <Dependent Role="Officer">
+        <PropertyRef Name="PositionId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -16,6 +16,10 @@ namespace GAI.ViewModel.AreasViewModel.UsersViewModel
 
         public ICommand AddCommand { get; set; }
 
+        public ICommand AddDriverCommand { get; set; }
+
+        public ICommand DriverCommand { get; set; }
+
         #endregion 
 
 
@@ -25,8 +29,34 @@ namespace GAI.ViewModel.AreasViewModel.UsersViewModel
             {
                 this.ProtocolCommand = new Command(ProtocolCommandClick);
                 this.AddCommand = new Command(AddCommandClick);
+                this.AddDriverCommand = new Command(AddDriverCommandClick);
+                this.DriverCommand = new Command(DriverCommandClick);
             }
             catch (Exception ex)
+            {
+                MessageBoxError(ex);
+            }
+        }
+
+        private void DriverCommandClick(object obj)
+        {
+            try
+            {
+                SetPage(new View.Areas.Driver.ListDrivers());
+            }
+            catch(Exception ex)
+            {
+                MessageBoxError(ex);
+            }
+        }
+
+        private void AddDriverCommandClick(object obj)
+        {
+            try
+            {
+
+            }
+            catch(Exception ex)
             {
                 MessageBoxError(ex);
             }

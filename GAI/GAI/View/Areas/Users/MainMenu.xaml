@@ -10,7 +10,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
+            
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -24,35 +24,17 @@
                         <Image Source="/GAI;component/Resource/Images/protocol.jpg"></Image>
                     </Button.Content>
                 </Button>
-                <Button Command="{Binding Path=AddCommand}" Style="{StaticResource StyleButton}" Margin="10">Добавить </Button>
+                <Button Command="{Binding Path=AddCommand}" Style="{StaticResource StyleButton}" Margin="10">Добавить</Button>
             </StackPanel>
             <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
                 <TextBlock FontWeight="Bold" TextAlignment="Center">Водитель</TextBlock>
-                <Button Width="100" Height="100">
+                <Button Width="100" Height="100" Command="{Binding Path=DriverCommand}">
                     <Button.Content>
                         <Image Source="/GAI;component/Resource/Images/driver.png"></Image>
                     </Button.Content>
                 </Button>
+                <Button Command="{Binding Path=AddDriverCommand}" Style="{StaticResource StyleButton}" Margin="10">Добавить</Button>
             </StackPanel>
-        </Grid>
-        <Grid Grid.Row="1">
-            <GroupBox  VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="2" Header="Автомобили">
-                <StackPanel Orientation="Vertical" Margin="50" >
-                    <StackPanel Orientation="Horizontal" >
-                        <TextBlock Margin="0 0 10 0" VerticalAlignment="Center">VIN</TextBlock>
-                        <TextBox Width="160" Margin="10 0 10 0"></TextBox>
-                        <Button>
-                            <Button.Content>
-                                <Image Source="/GAI;component/Resource/Icons/search.png" Width="25" ></Image>
-                            </Button.Content>
-                        </Button>
-                    </StackPanel>
-                    <StackPanel >
-                        <Button Height="25" Margin="0 10 0 10" >Добавить новый автомобиль</Button>
-                        <Button Height="25">Список автомобилей</Button>
-                    </StackPanel>
-                </StackPanel>
-            </GroupBox>
         </Grid>
     </Grid>
 </Page>

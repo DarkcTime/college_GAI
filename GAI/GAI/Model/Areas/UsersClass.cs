@@ -27,6 +27,23 @@ namespace GAI.Model.Areas
 
         }
 
+        public void AddUserAndOfficer(Model.Officer _officer, Model.User _user)
+        {
+            context.Officers.Add(_officer);
+            context.Users.Add(_user);
+            
+
+        }
+
+        public List<Model.Office> GetListOffice()
+        {
+            return context.Offices.ToList();
+        }
+
+        public List<Model.Position> GetPositionsList()
+        {
+            return context.Positions.ToList();
+        }
 
 
 

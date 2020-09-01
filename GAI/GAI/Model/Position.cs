@@ -12,25 +12,18 @@ namespace GAI.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Officer
+    public partial class Position
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Officer()
+        public Position()
         {
-            this.Protocols = new HashSet<Protocol>();
+            this.Officers = new HashSet<Officer>();
         }
     
-        public int IdOfficer { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string PhoneNumber { get; set; }
-        public int OfficeId { get; set; }
-        public int PositionId { get; set; }
+        public int IdPosition { get; set; }
+        public string NamePosition { get; set; }
     
-        public virtual Office Office { get; set; }
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Protocol> Protocols { get; set; }
-        public virtual Position Position { get; set; }
+        public virtual ICollection<Officer> Officers { get; set; }
     }
 }

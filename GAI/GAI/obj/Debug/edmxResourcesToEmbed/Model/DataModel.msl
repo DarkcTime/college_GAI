@@ -200,5 +200,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="GAIModel.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="NamePosition" ColumnName="NamePosition" />
+          <ScalarProperty Name="IdPosition" ColumnName="IdPosition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

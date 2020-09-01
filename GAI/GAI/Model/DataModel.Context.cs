@@ -45,6 +45,7 @@ namespace GAI.Model
         public virtual DbSet<TypeOfTransportVehicle> TypeOfTransportVehicles { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<TypeOfViolation> TypeOfViolations { get; set; }
+        public virtual DbSet<Position> Positions { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
